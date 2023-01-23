@@ -1,6 +1,6 @@
 {
     "author": "Nicolas Garcia",
-    "description": "Módulo para conectarse a Invofox y realizar operaciones sobre facturas",
+    "description": "Módulo para conectarse a Invofox y automatizar facturas",
     "disclaimer": "THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW. EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU. SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.",
     "version": "1.0.0",
     "license": "MIT",
@@ -10,7 +10,7 @@
     "mac": true,
     "docker": true,
     "dependencies": {
-        "python-requests": "2.28.2"
+        "requests": "2.28.2"
     },
     "type": "module",
     "name": "Invofox",
@@ -742,9 +742,9 @@
                             "pr": "_id,account,environment,company,creator,clientData"
                         },
                         "help": {
-                            "es": "Dejar vacío para traer todos. Separar valores por comas. Posibles valores: _: _id, account, environment, company, creator, clientData, type, name, creation, images, original, mimetype, data, publicState, confidence, validationInfo, approvalInfo, approvedBy, requiredSigns, import, exports, geometry",
-                            "en": "Leave empty to bring all. Separate values by commas. Possible values: _: _id, account, environment, company, creator, clientData, type, name, creation, images, original, mimetype, data, publicState, confidence, validationInfo, approvalInfo, approvedBy, requiredSigns, import, exports, geometry",
-                            "pr": "Deixar vazio para trazer todos. Separar valores por vírgulas. Valores possíveis: _: _id, account, environment, company, creator, clientData, type, name, creation, images, original, mimetype, data, publicState, confidence, validationInfo, approvalInfo, approvedBy, requiredSigns, import, exports, geometry"
+                            "es": "Dejar vacío para traer todos. Separar valores por comas. Posibles valores: _id, account, environment, company, creator, clientData, type, name, creation, images, original, mimetype, data, publicState, confidence, validationInfo, approvalInfo, approvedBy, requiredSigns, import, exports, geometry",
+                            "en": "Leave empty to bring all. Separate values by commas. Possible values: _id, account, environment, company, creator, clientData, type, name, creation, images, original, mimetype, data, publicState, confidence, validationInfo, approvalInfo, approvedBy, requiredSigns, import, exports, geometry",
+                            "pr": "Deixar vazio para trazer todos. Separar valores por vírgulas. Valores possíveis: _id, account, environment, company, creator, clientData, type, name, creation, images, original, mimetype, data, publicState, confidence, validationInfo, approvalInfo, approvedBy, requiredSigns, import, exports, geometry"
                         },
                         "id": "values",
                         "css": "col-md-6"

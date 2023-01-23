@@ -90,7 +90,7 @@ class invofox_auth: #pylint: disable=invalid-name
         '''
         try:
             url = self.url + "documents/bulk"
-            
+
             if path_folder:
                 file_paths = [file_name for file_name in os.listdir(path_folder) if os.path.isfile(os.path.join(path_folder, file_name))]
             elif path_file:
@@ -106,7 +106,7 @@ class invofox_auth: #pylint: disable=invalid-name
                 'pdf': 'application/pdf',
                 'zip': 'application/x-zip-compressed'
             }
-            
+
             mimes = []
             
             if file_paths is not None:
@@ -124,20 +124,16 @@ class invofox_auth: #pylint: disable=invalid-name
                     files = [('files', (file_path, open(file_path, 'rb'), mime)) for file_path, mime in zip(file_paths, mimes)]
             else:
                 files = []
-            
+
             headers = {
                 "accept": "application/json",
                 "x-api-key": self.api_key,
             }
-    
+
             payload = {
                 "type": type_document
             }
-            
-            # TODO - Verificar si es necesario enviar los urls como un string separado por comas, o si se puede enviar como un array
-            # if urls:
-            #     urls = urls.split(",")
-            #     payload["urls"] = urls
+
             if id_company:
                 payload["company"] = id_company
             if id_load_batch:
@@ -329,7 +325,8 @@ try:
         values = GetParams("values")
         result = GetParams("result")
 
-        values = values.replace(" ", "").split(",")
+        if values:
+            values = values.replace(" ", "").split(",")
 
         document = invofox.read_document(
             id_document=id_document,
