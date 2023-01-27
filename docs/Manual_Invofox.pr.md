@@ -4,7 +4,7 @@ Módulo para conexão à Invofox e automatização de faturas
 
 *Read this in other languages: [English](Manual_Invofox.md), [Español](Manual_Invofox.es.md), [Português](Manual_Invofox.pr.md).*
   
-![banner](imgs/Banner_Invofox.png)
+![banner](imgs/Banner_Invofox.jpg)
 ## Como instalar este módulo
   
 __Baixe__ e __instale__ o conteúdo na pasta 'modules' no caminho do Rocketbot  
@@ -58,4 +58,25 @@ Obter informação de um documento passando o seu ID.
 |Sessão|Sessão a utilizar|Invofox1|
 |ID Documento|ID do documento a obter|52543ec6d13ac7000bb90823|
 |Valores a obter|Valores a obter do documento|_id,account,environment,company,creator,clientData|
+|Atribuir resultado a variável|Atribuir resultado da consulta a uma variável|result|
+
+### Criar empresa
+  
+Criar uma empresa no Invofox.
+|Parâmetros|Descrição|exemplo|
+| --- | --- | --- |
+|Sessão|Sessão a utilizar|Invofox1|
+|Nome|Nome da empresa|Rocketbot|
+|Tax ID|Tax ID da empresa|12345|
+|Código do país|Código do país da empresa|ES|
+|Atribuir resultado a variável|Atribuir resultado da consulta a uma variável|result|
+
+### Obter empresas
+  
+Obtenha uma lista de empresas e seus dados.
+|Parâmetros|Descrição|exemplo|
+| --- | --- | --- |
+|Sessão|Sessão a utilizar|Invofox1|
+|Saltar|Quantidade de documentos a saltar|0|
+|Limite de empresas|Quantidade máxima de empresas a obter|10|
 |Atribuir resultado a variável|Atribuir resultado da consulta a uma variável|result|

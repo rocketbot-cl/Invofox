@@ -139,7 +139,7 @@ class invofox_auth: #pylint: disable=invalid-name
             if id_load_batch:
                 payload["loadBatch"] = id_load_batch
             if close_batch:
-                payload["closeBatch"] = close_batch
+                payload["closeBatch"] = 'true'
             if additional_data:
                 payload["clientData"] = additional_data
 
@@ -240,6 +240,67 @@ class invofox_auth: #pylint: disable=invalid-name
             PrintException()
             raise exc
 
+    def create_company(self,
+                       country_code=None,
+                       tax_id=None,
+                       name=None):
+        '''
+            Metodo para crear una empresa
+        '''
+        try:
+            url = self.url + "companies"
+
+            headers = {
+                "accept": "application/json",
+                "x-api-key": self.api_key,
+            }
+
+            data = {
+                "countryCode": country_code,
+                "taxId": tax_id,
+                "name": name
+            }
+
+            r = requests.post(url, headers=headers, data=data, timeout=60)
+
+            j = r.json()
+
+            return j
+
+        except Exception as exc:
+            PrintException()
+            raise exc
+
+    def get_companies(self,
+                      skip=0,
+                      limit=50
+    ):
+        '''
+            Metodo para obtener empresas
+        '''
+        try:
+            url = self.url + "companies"
+
+            headers = {
+                "accept": "application/json",
+                "x-api-key": self.api_key,
+            }
+
+            payload = {
+                "skip": skip,
+                "limit": limit
+            }
+
+            r = requests.get(url, headers=headers, params=payload, timeout=60)
+
+            j = r.json()['result']
+
+            return j
+
+        except Exception as exc:
+            PrintException()
+            raise exc
+
 
 global mod_invofox  #pylint: disable=invalid-name,global-at-module-level
 global invofox  #pylint: disable=invalid-name,global-at-module-level
@@ -330,9 +391,36 @@ try:
 
         document = invofox.read_document(
             id_document=id_document,
-            values=values)
+            values=values
+        )
 
         SetVar(result, document)
+
+    if module == "create_company":
+        country_code = GetParams("country_code")
+        tax_id = GetParams("tax_id")
+        name = GetParams("name")
+        result = GetParams("result")
+
+        company = invofox.create_company(
+            country_code=country_code,
+            tax_id=tax_id,
+            name=name
+        )
+
+        SetVar(result, company)
+
+    if module == "get_companies":
+        skip = GetParams("skip")
+        limit = GetParams("limit")
+        result = GetParams("result")
+
+        companies = invofox.get_companies(
+            skip=skip,
+            limit=limit
+        )
+
+        SetVar(result, companies)
 
 except Exception as e:
     traceback.print_exc()

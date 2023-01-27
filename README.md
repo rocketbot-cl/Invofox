@@ -23,7 +23,13 @@ Upload one or more documents to the Invofox platform. Use one of the two upload 
 Get a list with the documents ID of a Invofox session.
 
 4. Get document by ID  
-Get information of a document passing its ID.  
+Get information of a document passing its ID.
+
+5. Create company  
+Create a company in Invofox.
+
+6. Get companies  
+Get a list of companies and their data.  
 
 
 

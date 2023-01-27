@@ -25,6 +25,12 @@ Obtiene una lista con los ID de los documentos de una sesión de Invofox.
 4. Leer documento por ID  
 Obtiene información de un documento pasándole su ID.  
 
+5. Crear compañía  
+Crear una compañía en Invofox.
+
+6. Obtener compañías  
+Obtiene una lista de las compañías y sus datos.  
+
 
 
 
