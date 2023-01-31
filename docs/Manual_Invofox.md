@@ -4,7 +4,7 @@ Module to connect to Invofox and automate invoices
 
 *Read this in other languages: [English](Manual_Invofox.md), [Español](Manual_Invofox.es.md), [Português](Manual_Invofox.pr.md).*
   
-![banner](imgs/Banner_Invofox.png)
+![banner](imgs/Banner_Invofox.jpg)
 ## How to install this module
   
 __Download__ and __install__ the content in 'modules' folder in Rocketbot path  
@@ -58,4 +58,25 @@ Get information of a document passing its ID.
 |Session|Session to use|Invofox1|
 |Document ID|ID of the document to get|52543ec6d13ac7000bb90823|
 |Values to get|Values to get from the document|_id,account,environment,company,creator,clientData|
+|Assign result to variable|Assign result of the query to a variable|result|
+
+### Create company
+  
+Create a company in Invofox.
+|Parameters|Description|example|
+| --- | --- | --- |
+|Session|Session to use|Invofox1|
+|Name|Company name|Rocketbot|
+|Tax ID|Company Tax ID|12345|
+|Country code|Company country code|ES|
+|Assign result to variable|Assign result of the query to a variable|result|
+
+### Get companies
+  
+Get a list of companies and their data.
+|Parameters|Description|example|
+| --- | --- | --- |
+|Session|Session to use|Invofox1|
+|Skip|Amount of documents to skip|0|
+|Companies limit|Maximum amount of companies to get|10|
 |Assign result to variable|Assign result of the query to a variable|result|

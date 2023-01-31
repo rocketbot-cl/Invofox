@@ -25,6 +25,12 @@ Obter uma lista com os ID dos documentos de uma sessão de Invofox.
 4. Obter documento por ID  
 Obter informação de um documento passando o seu ID.  
 
+5. Criar empresa  
+Criar uma empresa no Invofox.
+
+6. Obter empresas  
+Obtenha uma lista de empresas e seus dados.  
+
 
 
 
