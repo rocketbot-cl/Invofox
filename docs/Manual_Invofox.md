@@ -22,6 +22,16 @@ Configure credentials to connect to the Invofox API.
 |API Key|Invofox API Key|$2b$10$3/6YJ2kYHE0rtUrks8PO7.IPDdgrNsGGTCpDLY6s8pTNzcjiQFFFe|
 |Assign result to variable|Assign connection result to variable|result|
 
+### Get companies
+  
+Get a list of companies and their data.
+|Parameters|Description|example|
+| --- | --- | --- |
+|Session|Session to use|Invofox1|
+|Skip|Amount of documents to skip|0|
+|Companies limit|Maximum amount of companies to get|10|
+|Assign result to variable|Assign result of the query to a variable|result|
+
 ### Upload documents
   
 Upload one or more documents to the Invofox platform. Use one of the two upload methods: File or Folder.
@@ -69,14 +79,4 @@ Create a company in Invofox.
 |Name|Company name|Rocketbot|
 |Tax ID|Company Tax ID|12345|
 |Country code|Company country code|ES|
-|Assign result to variable|Assign result of the query to a variable|result|
-
-### Get companies
-  
-Get a list of companies and their data.
-|Parameters|Description|example|
-| --- | --- | --- |
-|Session|Session to use|Invofox1|
-|Skip|Amount of documents to skip|0|
-|Companies limit|Maximum amount of companies to get|10|
 |Assign result to variable|Assign result of the query to a variable|result|

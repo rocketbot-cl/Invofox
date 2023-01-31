@@ -22,6 +22,16 @@ Configura credenciales para conectar con el API de Invofox.
 |API Key|API Key de Invofox|$2b$10$3/6YJ2kYHE0rtUrks8PO7.IPDdgrNsGGTCpDLY6s8pTNzcjiQFFFe|
 |Asignar resultado a variable|Asignar resultado de la conexión a variable|result|
 
+### Obtener compañías
+  
+Obtiene una lista de las compañías y sus datos.
+|Parámetros|Descripción|ejemplo|
+| --- | --- | --- |
+|Sesión|Sesión a utilizar|Invofox1|
+|Saltar|Cantidad de documentos a saltar|0|
+|Límite de compañías|Cantidad máxima de compañías a obtener|10|
+|Asignar resultado a variable|Asignar resultado de la consulta a una variable|result|
+
 ### Subir documentos
   
 Sube uno o varios documentos a la plataforma de Invofox. Utilizar uno de los dos métodos de subida: Archivo O Carpeta.
@@ -69,14 +79,4 @@ Crear una compañía en Invofox.
 |Nombre|Nombre de la compañía|Rocketbot|
 |Tax ID|Tax ID de la compañía|12345|
 |Código de país|Código de país de la compañía|ES|
-|Asignar resultado a variable|Asignar resultado de la consulta a una variable|result|
-
-### Obtener compañías
-  
-Obtiene una lista de las compañías y sus datos.
-|Parámetros|Descripción|ejemplo|
-| --- | --- | --- |
-|Sesión|Sesión a utilizar|Invofox1|
-|Saltar|Cantidad de documentos a saltar|0|
-|Límite de compañías|Cantidad máxima de compañías a obtener|10|
 |Asignar resultado a variable|Asignar resultado de la consulta a una variable|result|

@@ -22,6 +22,16 @@ Configure credenciais para conectar com o API do Invofox.
 |API Key|API Key do Invofox|$2b$10$3/6YJ2kYHE0rtUrks8PO7.IPDdgrNsGGTCpDLY6s8pTNzcjiQFFFe|
 |Atribuir resultado a variável|Atribuir resultado da conexão a variável|result|
 
+### Obter empresas
+  
+Obtenha uma lista de empresas e seus dados.
+|Parâmetros|Descrição|exemplo|
+| --- | --- | --- |
+|Sessão|Sessão a utilizar|Invofox1|
+|Saltar|Quantidade de documentos a saltar|0|
+|Limite de empresas|Quantidade máxima de empresas a obter|10|
+|Atribuir resultado a variável|Atribuir resultado da consulta a uma variável|result|
+
 ### Carregar documentos
   
 Carrega um ou mais documentos na plataforma Invofox. Utilize um dos dois métodos de carregamento: Arquivo ou Pasta.
@@ -69,14 +79,4 @@ Criar uma empresa no Invofox.
 |Nome|Nome da empresa|Rocketbot|
 |Tax ID|Tax ID da empresa|12345|
 |Código do país|Código do país da empresa|ES|
-|Atribuir resultado a variável|Atribuir resultado da consulta a uma variável|result|
-
-### Obter empresas
-  
-Obtenha uma lista de empresas e seus dados.
-|Parâmetros|Descrição|exemplo|
-| --- | --- | --- |
-|Sessão|Sessão a utilizar|Invofox1|
-|Saltar|Quantidade de documentos a saltar|0|
-|Limite de empresas|Quantidade máxima de empresas a obter|10|
 |Atribuir resultado a variável|Atribuir resultado da consulta a uma variável|result|
