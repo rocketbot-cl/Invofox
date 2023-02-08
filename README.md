@@ -16,20 +16,20 @@ __Download__ and __install__ the content in 'modules' folder in Rocketbot path
 1. Configure Invofox credentials  
 Configure credentials to connect to the Invofox API.
 
-2. Upload documents  
+2. Get companies  
+Get a list of companies and their data.
+
+3. Upload documents  
 Upload one or more documents to the Invofox platform. Use one of the two upload methods: File or Folder.
 
-3. Get documents  
+4. Get documents  
 Get a list with the documents ID of a Invofox session.
 
-4. Get document by ID  
+5. Get document by ID  
 Get information of a document passing its ID.
 
-5. Create company  
-Create a company in Invofox.
-
-6. Get companies  
-Get a list of companies and their data.  
+6. Create company  
+Create a company in Invofox.  
 
 
 

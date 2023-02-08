@@ -16,20 +16,20 @@ __Descarga__ e __instala__ el contenido en la carpeta 'modules' en la ruta de Ro
 1. Configurar credenciales Invofox  
 Configura credenciales para conectar con el API de Invofox.
 
-2. Subir documentos  
+2. Obtener compañías  
+Obtiene una lista de las compañías y sus datos.
+
+3. Subir documentos  
 Sube uno o varios documentos a la plataforma de Invofox. Utilizar uno de los dos métodos de subida: Archivo O Carpeta.
 
-3. Obtener documentos  
+4. Obtener documentos  
 Obtiene una lista con los ID de los documentos de una sesión de Invofox.
 
-4. Leer documento por ID  
-Obtiene información de un documento pasándole su ID.  
+5. Leer documento por ID  
+Obtiene información de un documento pasándole su ID.
 
-5. Crear compañía  
-Crear una compañía en Invofox.
-
-6. Obtener compañías  
-Obtiene una lista de las compañías y sus datos.  
+6. Crear compañía  
+Crear una compañía en Invofox.  
 
 
 

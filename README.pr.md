@@ -16,20 +16,20 @@ __Baixe__ e __instale__ o conteúdo na pasta 'modules' no caminho do Rocketbot
 1. Configurar credenciais Invofox  
 Configure credenciais para conectar com o API do Invofox.
 
-2. Carregar documentos  
+2. Obter empresas  
+Obtenha uma lista de empresas e seus dados.
+
+3. Carregar documentos  
 Carrega um ou mais documentos na plataforma Invofox. Utilize um dos dois métodos de carregamento: Arquivo ou Pasta.
 
-3. Obter documentos  
+4. Obter documentos  
 Obter uma lista com os ID dos documentos de uma sessão de Invofox.
 
-4. Obter documento por ID  
-Obter informação de um documento passando o seu ID.  
+5. Obter documento por ID  
+Obter informação de um documento passando o seu ID.
 
-5. Criar empresa  
-Criar uma empresa no Invofox.
-
-6. Obter empresas  
-Obtenha uma lista de empresas e seus dados.  
+6. Criar empresa  
+Criar uma empresa no Invofox.  
 
 
 
