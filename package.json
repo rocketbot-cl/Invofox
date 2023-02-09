@@ -1,0 +1,1075 @@
+{
+    "author": "Nicolas Garcia",
+    "description": "Módulo para conectarse a Invofox y automatizar facturas",
+    "disclaimer": "THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW. EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU. SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.",
+    "version": "1.2.1",
+    "license": "MIT",
+    "homepage": "http://rocketbot.com/",
+    "linux": true,
+    "windows": true,
+    "mac": true,
+    "docker": true,
+    "dependencies": {
+        "requests": "2.28.2"
+    },
+    "type": "module",
+    "name": "Invofox",
+    "title": {
+        "en": "Invofox",
+        "es": "Invofox",
+        "pr": "Invofox"
+    },
+    "icon": "data:image/png;base64,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",
+    "children": [
+        {
+            "es": {
+                "title": "Configurar credenciales Invofox",
+                "description": "Configura credenciales para conectar con el API de Invofox.",
+                "title_options": "Seleccione una opción",
+                "options": null
+            },
+            "en": {
+                "title": "Configure Invofox credentials",
+                "description": "Configure credentials to connect to the Invofox API.",
+                "title_options": "Select Option",
+                "options": null
+            },
+            "pr": {
+                "title": "Configurar credenciais Invofox",
+                "description": "Configure credenciais para conectar com o API do Invofox.",
+                "title_options": "Selecione uma opção",
+                "options": null
+            },
+            "form": {
+                "css": "modal-lg",
+                "inputs": [
+                    {
+                        "type": "input",
+                        "title": {
+                            "es": "Sesión",
+                            "en": "Session",
+                            "pr": "Sessão"
+                        },
+                        "description": {
+                            "es": "Sesión a utilizar",
+                            "en": "Session to use",
+                            "pr": "Sessão a utilizar"
+                        },
+                        "placeholder": {
+                            "es": "Invofox1",
+                            "en": "Invofox1",
+                            "pr": "Invofox1"
+                        },
+                        "id": "session",
+                        "css": "col-md-12"
+                    },
+                    {
+                        "type": "input",
+                        "title": {
+                            "es": "API Key",
+                            "en": "API Key",
+                            "pr": "API Key"
+                        },
+                        "description": {
+                            "es": "API Key de Invofox",
+                            "en": "Invofox API Key",
+                            "pr": "API Key do Invofox"
+                        },
+                        "placeholder": {
+                            "es": "$2b$10$3/6YJ2kYHE0rtUrks8PO7.IPDdgrNsGGTCpDLY6s8pTNzcjiQFFFe",
+                            "en": "$2b$10$3/6YJ2kYHE0rtUrks8PO7.IPDdgrNsGGTCpDLY6s8pTNzcjiQFFFe",
+                            "pr": "$2b$10$3/6YJ2kYHE0rtUrks8PO7.IPDdgrNsGGTCpDLY6s8pTNzcjiQFFFe"
+                        },
+                        "id": "api_key",
+                        "css": "col-md-6"
+                    },
+                    {
+                        "type": "input",
+                        "title": {
+                            "es": "Asignar resultado a variable",
+                            "en": "Assign result to variable",
+                            "pr": "Atribuir resultado a variável"
+                          },
+                          "description": {
+                            "es": "Asignar resultado de la conexión a variable",
+                            "en": "Assign connection result to variable",
+                            "pr": "Atribuir resultado da conexão a variável"
+                          },
+                        "placeholder": {
+                            "es": "result",
+                            "en": "result",
+                            "pr": "result"
+                        },
+                        "help": {
+                            "es": "Nombre de la variable sin {}",
+                            "en": "Variable name without {}",
+                            "pr": "Nome da variável sem {}"
+                        },
+                        "remove_vars": true,
+                        "id": "result",
+                        "css": "col-md-6"
+                    }
+                ]
+            },
+            "video_youtube": "",
+            "icon": "data:image/png;base64,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",
+            "module": "config",
+            "module_name": "Invofox",
+            "visible": true,
+            "options": false,
+            "father": "module",
+            "group": "scripts",
+            "linux": true,
+            "windows": true,
+            "mac": true,
+            "docker": true
+        },
+        {
+            "es": {
+                "title": "Obtener compañías",
+                "description": "Obtiene una lista de las compañías y sus datos.",
+                "title_options": "Seleccione una opción",
+                "options": null
+            },
+            "en": {
+                "title": "Get companies",
+                "description": "Get a list of companies and their data.",
+                "title_options": "Select Option",
+                "options": null
+            },
+            "pr": {
+                "title": "Obter empresas",
+                "description": "Obtenha uma lista de empresas e seus dados.",
+                "title_options": "Selecione uma opção",
+                "options": null
+            },
+            "form": {
+                "css": "modal-lg",
+                "inputs": [
+                    {
+                        "type": "input",
+                        "title": {
+                            "es": "Sesión",
+                            "en": "Session",
+                            "pr": "Sessão"
+                        },
+                        "description": {
+                            "es": "Sesión a utilizar",
+                            "en": "Session to use",
+                            "pr": "Sessão a utilizar"
+                        },
+                        "placeholder": {
+                            "es": "Invofox1",
+                            "en": "Invofox1",
+                            "pr": "Invofox1"
+                        },
+                        "id": "session",
+                        "css": "col-md-12"
+                    },
+                    {
+                        "type": "input",
+                        "title": {
+                            "es": "Saltar",
+                            "en": "Skip",
+                            "pr": "Saltar"
+                        },
+                        "description": {
+                            "es": "Cantidad de documentos a saltar",
+                            "en": "Amount of documents to skip",
+                            "pr": "Quantidade de documentos a saltar"
+                        },
+                        "placeholder": {
+                            "es": "0",
+                            "en": "0",
+                            "pr": "0"
+                        },
+                        "help": {
+                            "es": "Cantidad de compañías a saltar. Por defecto 0",
+                            "en": "Amount of documents to skip. Default 0",
+                            "pr": "Quantidade de documentos a saltar. Por defeito 0"
+                        },
+                        "id": "skip",
+                        "css": "col-md-6"
+                    },                  
+                    {
+                        "type": "input",
+                        "title": {
+                            "es": "Límite de compañías",
+                            "en": "Companies limit",
+                            "pr": "Limite de empresas"
+                          },
+                          "description": {
+                            "es": "Cantidad máxima de compañías a obtener",
+                            "en": "Maximum amount of companies to get",
+                            "pr": "Quantidade máxima de empresas a obter"
+                          },
+                        "placeholder": {
+                            "es": "10",
+                            "en": "10",
+                            "pr": "10"
+                        },
+                        "id": "limit",
+                        "css": "col-md-6"
+                    },                  
+                    {
+                        "type": "input",
+                        "title": {
+                            "es": "Asignar resultado a variable",
+                            "en": "Assign result to variable",
+                            "pr": "Atribuir resultado a variável"
+                          },
+                          "description": {
+                            "es": "Asignar resultado de la consulta a una variable",
+                            "en": "Assign result of the query to a variable",
+                            "pr": "Atribuir resultado da consulta a uma variável"
+                          },
+                        "placeholder": {
+                            "es": "result",
+                            "en": "result",
+                            "pr": "result"
+                        },
+                        "help": {
+                            "es": "Nombre de la variable sin {}",
+                            "en": "Variable name without {}",
+                            "pr": "Nome da variável sem {}"
+                        },
+                        "remove_vars": true,
+                        "id": "result",
+                        "css": "col-md-6"
+                    }
+                ]
+            },
+            "video_youtube": "",
+            "icon": "data:image/png;base64,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",
+            "module": "get_companies",
+            "module_name": "Invofox",
+            "visible": true,
+            "options": false,
+            "father": "module",
+            "group": "scripts",
+            "linux": true,
+            "windows": true,
+            "mac": true,
+            "docker": true
+        },
+        {
+            "es": {
+                "title": "Subir documentos",
+                "description": "Sube uno o varios documentos a la plataforma de Invofox. Utilizar uno de los dos métodos de subida: Archivo O Carpeta.",
+                "title_options": "Seleccione una opción",
+                "options": null
+            },
+            "en": {
+                "title": "Upload documents",
+                "description": "Upload one or more documents to the Invofox platform. Use one of the two upload methods: File or Folder.",
+                "title_options": "Select Option",
+                "options": null
+            },
+            "pr": {
+                "title": "Carregar documentos",
+                "description": "Carrega um ou mais documentos na plataforma Invofox. Utilize um dos dois métodos de carregamento: Arquivo ou Pasta.",
+                "title_options": "Selecione uma opção",
+                "options": null
+            },
+            "form": {
+                "css": "modal-lg",
+                "inputs": [
+                    {
+                        "type": "input",
+                        "title": {
+                            "es": "Sesión",
+                            "en": "Session",
+                            "pr": "Sessão"
+                        },
+                        "description": {
+                            "es": "Sesión a utilizar",
+                            "en": "Session to use",
+                            "pr": "Sessão a utilizar"
+                        },
+                        "placeholder": {
+                            "es": "Invofox1",
+                            "en": "Invofox1",
+                            "pr": "Invofox1"
+                        },
+                        "id": "session",
+                        "css": "col-md-12"
+                    },
+                    {
+                        "type": "file_select",
+                        "title": {
+                            "es": "Archivo",
+                            "en": "File",
+                            "pr": "Arquivo"
+                          },
+                        "description": {
+                          "es": "Ruta del archivo a subir",
+                          "en": "Path of the file to upload",
+                          "pr": "Caminho do arquivo a carregar"
+                        },
+                        "placeholder": {
+                          "es": "C:/Users/usuario/Desktop/Archivo.pdf",
+                          "en": "C:/Users/user/Desktop/File.pdf",
+                          "pr": "C:/Users/usuario/Desktop/Arquivo.pdf"
+                        },
+                        "help": {
+                          "es": "Formatos aceptados: .jpeg, .jpg, .png, .tiff, .gif, .pdf, .zip. Si se sube también una carpeta, el archivo será ignorado.",
+                          "en": "Accepted formats: .jpeg, .jpg, .png, .tiff, .gif, .pdf, .zip. If a folder is also uploaded, the file will be ignored.",
+                          "pr": "Formatos aceitos: .jpeg, .jpg, .png, .tiff, .gif, .pdf, .zip. Se um arquivo também for carregado, o arquivo será ignorado."
+                        },
+                        "id": "path_file",
+                        "css": "col-md-12"
+                    },
+                    {
+                        "type": "folder_select",
+                        "title": {
+                            "es": "Archivos",
+                            "en": "Files",
+                            "pr": "Arquivos"
+                          },
+                        "description": {
+                          "es": "Ruta de la carpeta que contiene los archivos a subir",
+                          "en": "Path of the folder that contains the files to upload",
+                          "pr": "Caminho da pasta que contém os arquivos a carregar"
+                        },
+                        "placeholder": {
+                          "es": "C:/Users/usuario/Desktop/Archivos",
+                          "en": "C:/Users/user/Desktop/Files",
+                          "pr": "C:/Users/usuario/Desktop/Arquivos"
+                        },
+                        "help": {
+                          "es": "Formatos aceptados: .jpeg, .jpg, .png, .tiff, .gif, .pdf, .zip. Si se sube también un archivo, el archivo será ignorado.",
+                          "en": "Accepted formats: .jpeg, .jpg, .png, .tiff, .gif, .pdf, .zip. If a file is also uploaded, the file will be ignored.",
+                          "pr": "Formatos aceitos: .jpeg, .jpg, .png, .tiff, .gif, .pdf, .zip. Se uma pasta também for carregada, o arquivo será ignorado."
+                        },
+                        "id": "path_folder",
+                        "css": "col-md-12"
+                    },
+                    {
+                        "type": "select",
+                        "title": {
+                            "es": "Tipo de documento",
+                            "en": "Document type",
+                            "pr": "Tipo de documento"
+                        },
+                        "description": {
+                            "es": "Tipo de documento a subir",
+                            "en": "Document type to upload",
+                            "pr": "Tipo de documento a carregar"
+                        },
+                        "placeholder": {
+                            "es": "invoice",
+                            "en": "invoice",
+                            "pr": "invoice"
+                        },
+                        "options": [
+                            {
+                              "title": "invoice",
+                              "value": "invoice"
+                            },
+                            {
+                              "title": "deliveryNote",
+                              "value": "deliveryNote"
+                            },
+                            {
+                                "title": "promissoryNote",
+                                "value": "promissoryNote"
+                            },
+                            {
+                                "title": "ticket",
+                                "value": "ticket"
+                            },
+                            {
+                                "title": "supplyInvoice",
+                                "value": "supplyInvoice"
+                            }
+                        ],
+                        "id": "type_document",
+                        "css": "col-md-6"
+                    },
+                    {
+                        "type": "input",
+                        "title": {
+                            "es": "ID Compañía",
+                            "en": "Company ID",
+                            "pr": "ID Companhia"
+                        },
+                        "description": {
+                            "es": "ID de la Compañía a la que se asociará el documento",
+                            "en": "Company ID to which the document will be associated",
+                            "pr": "ID da Companhia à qual o documento será associado"
+                        },
+                        "placeholder": {
+                            "es": "54aadbb7e79e2aba5d25f3e3",
+                            "en": "54aadbb7e79e2aba5d25f3e3",
+                            "pr": "54aadbb7e79e2aba5d25f3e3"
+                        },
+                        "help": {
+                            "es": "ID de la compañía a la que se asociará el documento. Requerido si el entorno tiene más de una compañía. Se puede obtener con el comando 'Obtener compañías''",
+                            "en": "Company ID to which the document will be associated. Required if the environment has more than one company. It can be obtained with the 'Get companies' command",
+                            "pr": "ID da companhia à qual o documento será associado. Requerido se o ambiente tiver mais de uma companhia. Pode ser obtido com o comando 'Obter companhias'"
+                        },
+                        "id": "id_company",
+                        "css": "col-md-6"
+                    },
+                    {
+                        "type": "input",
+                        "title": {
+                            "es": "ID Lote de carga",
+                            "en": "Load batch ID",
+                            "pr": "ID Lote de carga"
+                        },
+                        "description": {
+                            "es": "ID del lote de carga al que se asociará el documento",
+                            "en": "ID of the load batch to which the document will be associated",
+                            "pr": "ID do lote de carga ao qual o documento será associado"
+                        },
+                        "placeholder": {
+                            "es": "2",
+                            "en": "2",
+                            "pr": "2"
+                        },
+                        "help": {
+                            "es": "ID del lote de carga al que se asociará el documento. Si no se asigna un valor, se creará uno nuevo.",
+                            "en": "ID of the load batch to which the document will be associated. If no value is assigned, a new one will be created.",
+                            "pr": "ID do lote de carga ao qual o documento será associado. Se nenhum valor for atribuído, um novo será criado."
+                        },
+                        "id": "id_load_batch",
+                        "css": "col-md-6"
+                    },
+                    {
+                        "type": "checkbox",
+                        "title": {
+                            "es": "Cerrar lote",
+                            "en": "Close batch",
+                            "pr": "Fechar lote"
+                        },
+                        "description": {
+                          "es": "Marca esta casilla si quieres cerrar el lote de carga luego de subir los archivos.",
+                          "en": "Check this box if you want to close the load batch after uploading the files.",
+                          "pr": "Marque esta caixa se você quiser fechar o lote de carga após carregar os arquivos."
+                        },
+                        "placeholder": {
+                          "es": "True",
+                          "en": "True",
+                          "pr": "True"
+                        },
+                        "help":{
+                          "es": "Marca esta casilla si quieres cerrar el lote de carga luego de subir los archivos.",
+                          "en": "Check this box if you want to close the load batch after uploading the files.",
+                          "pr": "Marque esta caixa se você quiser fechar o lote de carga após carregar os arquivos."
+                        },
+                        "id": "close_batch",
+                        "css": "col-md-6"
+                    },
+                    {
+                        "type": "textarea",
+                        "placeholder": {
+                          "es": "[ { _filename: <name of the file to which attach this data>, <key>: <value> }, ... { _filename: <name of the file to which attach this data>, <key>: <value> } ]",
+                          "en": "[ { _filename: <name of the file to which attach this data>, <key>: <value> }, ... { _filename: <name of the file to which attach this data>, <key>: <value> } ]",
+                          "pr": "[ { _filename: <name of the file to which attach this data>, <key>: <value> }, ... { _filename: <name of the file to which attach this data>, <key>: <value> } ]"
+                        },
+                        "title": {
+                          "es": "Datos adicionales",
+                          "en": "Additional data",
+                          "pr": "Dados adicionais"
+                        },
+                        "description": {
+                          "es": "Datos adicionales que se adjuntarán a los archivos. Debe ser un array de objetos con el nombre del archivo al que se adjuntará el dato y el dato en sí.",
+                          "en": "Additional data that will be attached to the files. It must be an array of objects with the name of the file to which the data will be attached and the data itself.",
+                          "pr": "Dados adicionais que serão anexados aos arquivos. Deve ser uma matriz de objetos com o nome do arquivo ao qual o dado será anexado e o dado em si."
+                        },
+                        "help": {
+                          "es": "Datos adicionales que se adjuntarán a los archivos. Debe ser un array de objetos con el nombre del archivo al que se adjuntará el dato y el dato en sí. Ejemplo: [{ _filename: 'file1.pdf', <key>: <value> }, ... { _filename: 'file2.pdf', <key>: <value> }]",
+                          "en": "Additional data that will be attached to the files. It must be an array of objects with the name of the file to which the data will be attached and the data itself. Example: [{ _filename: 'file1.pdf', <key>: <value> }, ... { _filename: 'file2.pdf', <key>: <value> }]",
+                          "pr": "Dados adicionais que serão anexados aos arquivos. Deve ser uma matriz de objetos com o nome do arquivo ao qual o dado será anexado e o dado em si. Exemplo: [{ _filename: 'file1.pdf', <key>: <value> }, ... { _filename: 'file2.pdf', <key>: <value> }]"
+                        },
+                        "id": "additional_data",
+                        "css": "col-md-12"
+                    },
+                    {
+                        "type": "input",
+                        "title": {
+                            "es": "Asignar resultado a variable",
+                            "en": "Assign result to variable",
+                            "pr": "Atribuir resultado a variável"
+                          },
+                          "description": {
+                            "es": "Asignar resultado de la subida de archivos a una variable.",
+                            "en": "Assign result of file upload to a variable.",
+                            "pr": "Atribuir resultado do upload de arquivos a uma variável."
+                          },
+                        "placeholder": {
+                            "es": "result",
+                            "en": "result",
+                            "pr": "result"
+                        },
+                        "help": {
+                            "es": "Nombre de la variable sin {}",
+                            "en": "Variable name without {}",
+                            "pr": "Nome da variável sem {}"
+                        },
+                        "remove_vars": true,
+                        "id": "result",
+                        "css": "col-md-12"
+                    }
+                ]
+            },
+            "video_youtube": "",
+            "icon": "data:image/png;base64,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",
+            "module": "upload_documents",
+            "module_name": "Invofox",
+            "visible": true,
+            "options": false,
+            "father": "module",
+            "group": "scripts",
+            "linux": true,
+            "windows": true,
+            "mac": true,
+            "docker": true
+        },
+        {
+            "es": {
+                "title": "Obtener documentos",
+                "description": "Obtiene una lista con los ID de los documentos de una sesión de Invofox.",
+                "title_options": "Seleccione una opción",
+                "options": null
+            },
+            "en": {
+                "title": "Get documents",
+                "description": "Get a list with the documents ID of a Invofox session.",
+                "title_options": "Select Option",
+                "options": null
+            },
+            "pr": {
+                "title": "Obter documentos",
+                "description": "Obter uma lista com os ID dos documentos de uma sessão de Invofox.",
+                "title_options": "Selecione uma opção",
+                "options": null
+            },
+            "form": {
+                "css": "modal-lg",
+                "inputs": [
+                    {
+                        "type": "input",
+                        "title": {
+                            "es": "Sesión",
+                            "en": "Session",
+                            "pr": "Sessão"
+                        },
+                        "description": {
+                            "es": "Sesión a utilizar",
+                            "en": "Session to use",
+                            "pr": "Sessão a utilizar"
+                        },
+                        "placeholder": {
+                            "es": "Invofox1",
+                            "en": "Invofox1",
+                            "pr": "Invofox1"
+                        },
+                        "id": "session",
+                        "css": "col-md-12"
+                    },
+                    {
+                        "type": "input",
+                        "title": {
+                            "es": "Saltar",
+                            "en": "Skip",
+                            "pr": "Saltar"
+                        },
+                        "description": {
+                            "es": "Cantidad de documentos a saltar",
+                            "en": "Amount of documents to skip",
+                            "pr": "Quantidade de documentos a saltar"
+                        },
+                        "placeholder": {
+                            "es": "0",
+                            "en": "0",
+                            "pr": "0"
+                        },
+                        "help": {
+                            "es": "Cantidad de documentos a saltar. Por defecto 0",
+                            "en": "Amount of documents to skip. Default 0",
+                            "pr": "Quantidade de documentos a saltar. Por defeito 0"
+                        },
+                        "id": "skip",
+                        "css": "col-md-6"
+                    },
+                    {
+                        "type": "input",
+                        "title": {
+                            "es": "Límite de documentos",
+                            "en": "Documents limit",
+                            "pr": "Limite de documentos"
+                          },
+                          "description": {
+                            "es": "Cantidad máxima de documentos a obtener",
+                            "en": "Maximum amount of documents to get",
+                            "pr": "Quantidade máxima de documentos a obter"
+                          },
+                        "placeholder": {
+                            "es": "50",
+                            "en": "50",
+                            "pr": "50"
+                        },
+                        "help": {
+                            "es": "Cantidad límite de documentos a obtener. Máximo 50",
+                            "en": "Limit amount of documents to get. Maximum 50",
+                            "pr": "Quantidade limite de documentos a obter. Máximo 50"
+                        },
+                        "id": "limit",
+                        "css": "col-md-6"
+                    },
+                    {
+                        "type": "select",
+                        "title": {
+                            "es": "Tipo de documento",
+                            "en": "Document type",
+                            "pr": "Tipo de documento"
+                        },
+                        "description": {
+                            "es": "Tipo de documento a obtener",
+                            "en": "Document type to get",
+                            "pr": "Tipo de documento a obter"
+                        },
+                        "placeholder": {
+                            "es": "invoice",
+                            "en": "invoice",
+                            "pr": "invoice"
+                        },
+                        "options": [
+                            {
+                              "title": "invoice",
+                              "value": "invoice"
+                            },
+                            {
+                              "title": "deliveryNote",
+                              "value": "deliveryNote"
+                            },
+                            {
+                                "title": "promissoryNote",
+                                "value": "promissoryNote"
+                            },
+                            {
+                                "title": "ticket",
+                                "value": "ticket"
+                            },
+                            {
+                                "title": "supplyInvoice",
+                                "value": "supplyInvoice"
+                            }
+                        ],
+                        "help": {
+                            "es": "Requerido",
+                            "en": "Required",
+                            "pr": "Requerido"
+                        },
+                        "id": "type_document",
+                        "css": "col-md-6"
+                    },
+                    {
+                        "type": "select",
+                        "title": {
+                            "es": "Estado público",
+                            "en": "Public state",
+                            "pr": "Estado público"
+                        },
+                        "description": {
+                            "es": "Estado público de los documentos a obtener",
+                            "en": "Public state of the documents to get",
+                            "pr": "Estado público dos documentos a obter"
+                        },
+                        "placeholder": {
+                            "es": "processing",
+                            "en": "processing",
+                            "pr": "processing"
+                        },
+                        "options": [
+                            {
+                              "title": "all",
+                              "value": "all"
+                            },
+                            {
+                              "title": "processing",
+                              "value": "processing"
+                            },
+                            {
+                                "title": "pendingCorrection",
+                                "value": "pendingCorrection"
+                            },
+                            {
+                                "title": "discarded",
+                                "value": "discarded"
+                            },
+                            {
+                                "title": "pendingDecission",
+                                "value": "pendingDecission"
+                            },
+                            {
+                                "title": "rejected",
+                                "value": "rejected"
+                            },
+                            {
+                                "title": "approved",
+                                "value": "approved"
+                            },
+                            {
+                                "title": "exported",
+                                "value": "exported"
+                            },
+                            {
+                                "title": "error",
+                                "value": "error"
+                            }
+                        ],
+                        "id": "public_state",
+                        "css": "col-md-6"
+                    },
+                    {
+                        "type": "input",
+                        "title": {
+                            "es": "ID Compañía",
+                            "en": "Company ID",
+                            "pr": "ID Companhia"
+                        },
+                        "description": {
+                            "es": "ID de la Compañía de la que se obtendrán los documentos",
+                            "en": "Company ID from which the documents will be obtained",
+                            "pr": "ID da Companhia da qual se obterão os documentos"
+                        },
+                        "placeholder": {
+                            "es": "54aadbb7e79e2aba5d25f3e3",
+                            "en": "54aadbb7e79e2aba5d25f3e3",
+                            "pr": "54aadbb7e79e2aba5d25f3e3"
+                        },
+                        "help": {
+                            "es": "ID de la compañía de la que se obtendrán los documentos. Se puede obtener con el comando 'Obtener compañías''",
+                            "en": "Company ID to which the document will be associated. It can be obtained with the 'Get companies' command",
+                            "pr": "ID da companhia à qual o documento será associado. Pode ser obtido com o comando 'Obter companhias'"
+                        },
+                        "id": "id_company",
+                        "css": "col-md-6"
+                    },
+                    {
+                        "type": "input",
+                        "title": {
+                            "es": "Asignar resultado a variable",
+                            "en": "Assign result to variable",
+                            "pr": "Atribuir resultado a variável"
+                          },
+                          "description": {
+                            "es": "Asignar resultado de la ejecución a una variable",
+                            "en": "Assign result of execution to a variable",
+                            "pr": "Atribuir resultado da execução a uma variável"
+                          },
+                        "placeholder": {
+                            "es": "result",
+                            "en": "result",
+                            "pr": "result"
+                        },
+                        "help": {
+                            "es": "Nombre de la variable sin {}",
+                            "en": "Variable name without {}",
+                            "pr": "Nome da variável sem {}"
+                        },
+                        "remove_vars": true,
+                        "id": "result",
+                        "css": "col-md-12"
+                    }
+                ]
+            },
+            "video_youtube": "",
+            "icon": "data:image/png;base64,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",
+            "module": "get_documents",
+            "module_name": "Invofox",
+            "visible": true,
+            "options": false,
+            "father": "module",
+            "group": "scripts",
+            "linux": true,
+            "windows": true,
+            "mac": true,
+            "docker": true
+        },
+        {
+            "es": {
+                "title": "Leer documento por ID",
+                "description": "Obtiene información de un documento pasándole su ID.",
+                "title_options": "Seleccione una opción",
+                "options": null
+            },
+            "en": {
+                "title": "Get document by ID",
+                "description": "Get information of a document passing its ID.",
+                "title_options": "Select Option",
+                "options": null
+            },
+            "pr": {
+                "title": "Obter documento por ID",
+                "description": "Obter informação de um documento passando o seu ID.",
+                "title_options": "Selecione uma opção",
+                "options": null
+            },
+            "form": {
+                "css": "modal-lg",
+                "inputs": [
+                    {
+                        "type": "input",
+                        "title": {
+                            "es": "Sesión",
+                            "en": "Session",
+                            "pr": "Sessão"
+                        },
+                        "description": {
+                            "es": "Sesión a utilizar",
+                            "en": "Session to use",
+                            "pr": "Sessão a utilizar"
+                        },
+                        "placeholder": {
+                            "es": "Invofox1",
+                            "en": "Invofox1",
+                            "pr": "Invofox1"
+                        },
+                        "id": "session",
+                        "css": "col-md-12"
+                    },
+                    {
+                        "type": "input",
+                        "title": {
+                            "es": "ID Documento",
+                            "en": "Document ID",
+                            "pr": "ID Documento"
+                        },
+                        "description": {
+                            "es": "ID del documento a obtener",
+                            "en": "ID of the document to get",
+                            "pr": "ID do documento a obter"
+                        },
+                        "placeholder": {
+                            "es": "52543ec6d13ac7000bb90823",
+                            "en": "52543ec6d13ac7000bb90823",
+                            "pr": "52543ec6d13ac7000bb90823"
+                        },
+                        "id": "id_document",
+                        "css": "col-md-6"
+                    },                    
+                    {
+                        "type": "input",
+                        "title": {
+                            "es": "Valores a obtener",
+                            "en": "Values to get",
+                            "pr": "Valores a obter"
+                        },
+                        "description": {
+                            "es": "Valores a obtener del documento",
+                            "en": "Values to get from the document",
+                            "pr": "Valores a obter do documento"
+                        },
+                        "placeholder": {
+                            "es": "_id,account,environment,company,creator,clientData",
+                            "en": "_id,account,environment,company,creator,clientData",
+                            "pr": "_id,account,environment,company,creator,clientData"
+                        },
+                        "help": {
+                            "es": "Dejar vacío para traer todos. Separar valores por comas. Posibles valores: _id, account, environment, company, creator, clientData, type, name, creation, images, original, mimetype, data, publicState, confidence, validationInfo, approvalInfo, approvedBy, requiredSigns, import, exports, geometry",
+                            "en": "Leave empty to bring all. Separate values by commas. Possible values: _id, account, environment, company, creator, clientData, type, name, creation, images, original, mimetype, data, publicState, confidence, validationInfo, approvalInfo, approvedBy, requiredSigns, import, exports, geometry",
+                            "pr": "Deixar vazio para trazer todos. Separar valores por vírgulas. Valores possíveis: _id, account, environment, company, creator, clientData, type, name, creation, images, original, mimetype, data, publicState, confidence, validationInfo, approvalInfo, approvedBy, requiredSigns, import, exports, geometry"
+                        },
+                        "id": "values",
+                        "css": "col-md-6"
+                    },
+                    {
+                        "type": "input",
+                        "title": {
+                            "es": "Asignar resultado a variable",
+                            "en": "Assign result to variable",
+                            "pr": "Atribuir resultado a variável"
+                          },
+                          "description": {
+                            "es": "Asignar resultado de la consulta a una variable",
+                            "en": "Assign result of the query to a variable",
+                            "pr": "Atribuir resultado da consulta a uma variável"
+                          },
+                        "placeholder": {
+                            "es": "result",
+                            "en": "result",
+                            "pr": "result"
+                        },
+                        "help": {
+                            "es": "Nombre de la variable sin {}",
+                            "en": "Variable name without {}",
+                            "pr": "Nome da variável sem {}"
+                        },
+                        "remove_vars": true,
+                        "id": "result",
+                        "css": "col-md-12"
+                    }
+                ]
+            },
+            "video_youtube": "",
+            "icon": "data:image/png;base64,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",
+            "module": "read_document",
+            "module_name": "Invofox",
+            "visible": true,
+            "options": false,
+            "father": "module",
+            "group": "scripts",
+            "linux": true,
+            "windows": true,
+            "mac": true,
+            "docker": true
+        },
+        {
+            "es": {
+                "title": "Crear compañía",
+                "description": "Crear una compañía en Invofox.",
+                "title_options": "Seleccione una opción",
+                "options": null
+            },
+            "en": {
+                "title": "Create company",
+                "description": "Create a company in Invofox.",
+                "title_options": "Select Option",
+                "options": null
+            },
+            "pr": {
+                "title": "Criar empresa",
+                "description": "Criar uma empresa no Invofox.",
+                "title_options": "Selecione uma opção",
+                "options": null
+            },
+            "form": {
+                "css": "modal-lg",
+                "inputs": [
+                    {
+                        "type": "input",
+                        "title": {
+                            "es": "Sesión",
+                            "en": "Session",
+                            "pr": "Sessão"
+                        },
+                        "description": {
+                            "es": "Sesión a utilizar",
+                            "en": "Session to use",
+                            "pr": "Sessão a utilizar"
+                        },
+                        "placeholder": {
+                            "es": "Invofox1",
+                            "en": "Invofox1",
+                            "pr": "Invofox1"
+                        },
+                        "id": "session",
+                        "css": "col-md-12"
+                    },
+                    {
+                        "type": "input",
+                        "title": {
+                            "es": "Nombre",
+                            "en": "Name",
+                            "pr": "Nome"
+                        },
+                        "description": {
+                            "es": "Nombre de la compañía",
+                            "en": "Company name",
+                            "pr": "Nome da empresa"
+                        },
+                        "placeholder": {
+                            "es": "Rocketbot",
+                            "en": "Rocketbot",
+                            "pr": "Rocketbot"
+                        },
+                        "id": "name",
+                        "css": "col-md-6"
+                    },                    
+                    {
+                        "type": "input",
+                        "title": {
+                            "es": "Tax ID",
+                            "en": "Tax ID",
+                            "pr": "Tax ID"
+                        },
+                        "description": {
+                            "es": "Tax ID de la compañía",
+                            "en": "Company Tax ID",
+                            "pr": "Tax ID da empresa"
+                        },
+                        "placeholder": {
+                            "es": "12345",
+                            "en": "12345",
+                            "pr": "12345"
+                        },
+                        "help": {
+                            "es": "Requerido.",
+                            "en": "Required.",
+                            "pr": "Requerido."
+                        },
+                        "id": "tax_id",
+                        "css": "col-md-6"
+                    },                    
+                    {
+                        "type": "input",
+                        "title": {
+                            "es": "Código de país",
+                            "en": "Country code",
+                            "pr": "Código do país"
+                        },
+                        "description": {
+                            "es": "Código de país de la compañía",
+                            "en": "Company country code",
+                            "pr": "Código do país da empresa"
+                        },
+                        "placeholder": {
+                            "es": "ES",
+                            "en": "ES",
+                            "pr": "ES"
+                        },
+                        "help": {
+                            "es": "Requerido. Formato ISO 3166-1 alfa-2",
+                            "en": "Required. ISO 3166-1 alpha-2 format",
+                            "pr": "Requerido. Formato ISO 3166-1 alfa-2"
+                        },
+                        "id": "country_code",
+                        "css": "col-md-6"
+                    },
+                    {
+                        "type": "input",
+                        "title": {
+                            "es": "Asignar resultado a variable",
+                            "en": "Assign result to variable",
+                            "pr": "Atribuir resultado a variável"
+                          },
+                          "description": {
+                            "es": "Asignar resultado de la consulta a una variable",
+                            "en": "Assign result of the query to a variable",
+                            "pr": "Atribuir resultado da consulta a uma variável"
+                          },
+                        "placeholder": {
+                            "es": "result",
+                            "en": "result",
+                            "pr": "result"
+                        },
+                        "help": {
+                            "es": "Nombre de la variable sin {}",
+                            "en": "Variable name without {}",
+                            "pr": "Nome da variável sem {}"
+                        },
+                        "remove_vars": true,
+                        "id": "result",
+                        "css": "col-md-6"
+                    }
+                ]
+            },
+            "video_youtube": "",
+            "icon": "data:image/png;base64,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",
+            "module": "create_company",
+            "module_name": "Invofox",
+            "visible": true,
+            "options": false,
+            "father": "module",
+            "group": "scripts",
+            "linux": true,
+            "windows": true,
+            "mac": true,
+            "docker": true
+        }
+    ]
+}
